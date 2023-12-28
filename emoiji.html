@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji to Text Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #emojiInput {
+      font-size: 24px;
+      padding: 10px;
+    }
+
+    #convertButton {
+      font-size: 18px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Emoji to Text Generator</h1>
+
+  <label for="emojiInput">Enter an emoji:</label>
+  <input type="text" id="emojiInput" placeholder="Insert emoji here" />
+
+  <button id="convertButton" onclick="convertEmojiToText()">Convert</button>
+
+  <div id="result"></div>
+
+  <script>
+    function convertEmojiToText() {
+      const emojiInput = document.getElementById('emojiInput');
+      const resultElement = document.getElementById('result');
+      const emoji = emojiInput.value;
+
+      // Add your emoji-to-text mapping logic here
+      const emojiToTextMap = {
+        '😊': 'Smile',
+        '❤️': 'Heart',
+        // Add more mappings as needed
+      };
+
+      const text = emojiToTextMap[emoji] || 'Not recognized';
+      resultElement.textContent = `Text: ${text}`;
+    }
+  </script>
+
+</body>
+</html>
